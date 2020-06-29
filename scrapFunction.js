@@ -1,12 +1,16 @@
 const cheerio = require('cheerio');
 const axios = require('axios');
+const fetch = require('node-fetch')
 
 
 
 const fetchData = async (url) => {
-    const result = await axios.get(url);
+   const result = await axios.get(url);
 
-    return cheerio.load(result.data);
+  // const _result = await fetch(url);
+   //const result = _result.json(); 
+console.log(result);
+    return cheerio.load(result);
 }
 
 
